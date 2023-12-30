@@ -1,0 +1,145 @@
+# Aaxis Test
+
+API Project for Aaxis.
+
+
+## Documentation
+
+[Test Documentation](https://docs.google.com/document/d/1KMTRaQOsoqaaTJoEuyUFsWwss-jZVKJAQOyLi4LdPtY/edit?usp=sharing)
+
+[Postman Request](https://drive.google.com/file/d/10zgLlTpJ42ExJ6kjyy3bn7Cs2hs-dVO3/view?usp=sharing)
+
+
+## Requirements
+
+This project needs:
+
+- PHP 8.2
+- Symfony 7
+- MySQL 8.0
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/jc-22/AaxisTest
+```
+
+Go to the project directory
+
+```bash
+  cd AaxisTest
+```
+
+Create a .env.local and fill with the correct credentials
+
+```bash
+  DATABASE_URL="mysql://user:password@host:port/databasename?serverVersion=8.0.32&charset=utf8mb4"
+```
+
+Create the database
+
+```bash
+  php bin/console doctrine:database:create
+```
+
+Run the migrations
+
+```bash
+  php bin/console doctrine:migrations:migrate
+```
+
+Deploy the proyect
+
+```bash
+  symfony serve:start
+```
+
+
+## API Reference
+
+#### Get all products
+
+```http
+  GET /api/products
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `X-AUTH-TOKEN` | `string` | **Required**. Your API key |
+
+#### Create a product
+
+```http
+  POST /api/product/create
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `X-AUTH-TOKEN` | `string` | **Required**. Your API key |
+| `Content-Type` | `string` | application/json |
+
+##### Json
+
+```
+[
+    {   
+        "sku" : "Sku",
+        "name" : "Name",
+        "description" : "Description"
+    }
+]
+```
+
+#### Edit a product
+
+```http
+  PUT /api/product/edit
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `X-AUTH-TOKEN` | `string` | **Required**. Your API key |
+| `Content-Type` | `string` | application/json |
+
+##### Json
+
+```
+[
+    {   
+        "sku" : "Sku",
+        "name" : "Name",
+        "description" : "Description"
+    }
+]
+```
+
+#### Edit a product
+
+```http
+  PAT /api/product/edit
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `X-AUTH-TOKEN` | `string` | **Required**. Your API key |
+| `Content-Type` | `string` | application/json |
+
+##### Json
+
+```
+[
+    {   
+        "sku" : "Sku",
+        "name" : "Name",
+    }
+]
+```
+## Token
+
+To make any request, you need the X-AUTH-TOKEN
+
+`A4x1sT3st`
+
