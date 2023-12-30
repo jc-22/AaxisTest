@@ -1,0 +1,14 @@
+App\Entity\Product:
+  attributes:
+    id:
+      groups: ['product']
+    sku:
+      groups: [ 'product' ]
+    name:
+      groups: [ 'product' ]
+    description:
+      groups: [ 'product' ]
+    created_at:
+      groups: [ 'product' ]
+    update_at:
+      groups: [ 'product' ]

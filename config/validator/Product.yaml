@@ -1,0 +1,16 @@
+App\Form\Model\ProductDto:
+  properties:
+    sku:
+      - NotBlank: ~
+      - Length:
+          min: 5
+          max: 250
+          minMessage: 'The title must be at least {{ limit }} characters long'
+          maxMessage: 'The title cannot be longer than {{ limit }} characters'
+    name:
+      - NotBlank: ~
+      - Length:
+          min: 5
+          max: 50
+          minMessage: 'The name must be at least {{ limit }} characters long'
+          maxMessage: 'The name cannot be longer than {{ limit }} characters'
